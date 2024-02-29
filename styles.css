@@ -1,0 +1,111 @@
+/* Paste your CSS code here */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000021;
+    color: #ffffff;
+}
+header {
+    background-color: #02023f;
+    padding: 10px 0; /* Adjusted padding */
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.logo {
+    font-size: 1.2rem; /* Adjusted font size */
+    color: #f5efef;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li {
+    margin: 0 10px; /* Adjusted margin */
+    font-size: 0.9rem; /* Adjusted font size */
+}
+/* Styling for navbar links */
+nav ul li a {
+    padding: 8px 15px; /* Adjusted padding */
+    color: white; /* Set text color to white */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition */
+}
+nav ul li a:hover {
+    color: #a9a9a9; /* Change text color on hover */
+}
+/* Styling for hover email */
+.hover-email {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+nav ul li:hover .hover-email {
+    display: block;
+}
+nav ul li a:hover{
+    color: rgb(153,153,226);
+    font-size: 0.91rem;
+}
+main {
+    padding: 50px 20px;
+}
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.leftSection, .rightSection {
+    animation: fadeIn 1s ease-out; /* Apply animation to both sections */
+    animation-delay: 0.5s; /* Delay the animation to start after 0.5s */
+}
+.leftSection {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.leftSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.leftSection p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.rightSection {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+.rightSection img {
+    max-width: 80%; /* Adjusted width */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px; /* Added margin to move the image down */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.purple{
+    color: purple;
+}
