@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Anurag's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000021;
+            color: #ffffff;
+        }
+        header {
+            background-color: #02023f;
+            padding: 10px 0; /* Adjusted padding */
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.2rem; /* Adjusted font size */
+            color: #f5efef;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 10px; /* Adjusted margin */
+            font-size: 0.9rem; /* Adjusted font size */
+        }
+        /* Styling for navbar links */
+        nav ul li a {
+            padding: 8px 15px; /* Adjusted padding */
+            color: white; /* Set text color to white */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s; /* Smooth transition */
+        }
+        nav ul li a:hover {
+            color: #a9a9a9; /* Change text color on hover */
+        }
+        /* Styling for hover email */
+        .hover-email {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: opacity 0.3s;
+        }
+        nav ul li:hover .hover-email {
+            display: block;
+        }
+        main {
+            padding: 50px 20px;
+        }
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .leftSection, .rightSection {
+            animation: fadeIn 1s ease-out; /* Apply animation to both sections */
+            animation-delay: 0.5s; /* Delay the animation to start after 0.5s */
+        }
+        .leftSection {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .leftSection h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .leftSection p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .rightSection {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .rightSection img {
+            max-width: 80%; /* Adjusted width */
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px; /* Added margin to move the image down */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .purple{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Anurag's Portfolio</div>
+            <div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Services</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/" class="contact-link">Contact</a>
+                        <div class="hover-email">anuragsharma251001@gmail.com</div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                <h2>About Me</h2>
+                <h3>My name is <span class="purple">Anurag Sharma</span><br>and I am a passionate <h3>
+                    Web Devloper</h3>
+            </div>
+            <div class="rightSection">
+                <img src="249.png" alt="Harry's Photo">
+            </div>
+        </section>
+    </main>
+    <script>
+        const contactLink = document.querySelector('.contact-link');
+        const hoverEmail = document.querySelector('.hover-email');
+        
+        contactLink.addEventListener('mouseenter', function(event) {
+            hoverEmail.style.display = 'block';
+        });
+
+        document.addEventListener('click', function(event) {
+            const isClickInside = contactLink.contains(event.target) || hoverEmail.contains(event.target);
+            if (!isClickInside) {
+                hoverEmail.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
