@@ -8,6 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
     <title>Anurag's Portfolio</title>
+    <style>
+        .resume-container {
+            opacity: 0; /* Initially hide the resume */
+            transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+        }
+        .show-resume {
+            opacity: 1; /* Show the resume */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,13 +39,25 @@
         <section class="firstSection">
             <div class="leftSection">
                 <h2>About Me</h2>
-                <h3>My name is <span class="purple">Anurag Sharma</span><br>and I am a passionate <h3>
-                    Web Devloper</h3>
+                <h3>My name is <span class="purple">Anurag</span><br>and I am a passionate <h3>
+                    Web Developer</h3>
                     <h3 id="element"></h3>
-
+                    <div class="buttons">
+                        <a href="https://github.com/yourusername" class="github-button">GitHub</a>
+                        <button id="show-resume-btn" class="download-cv-button">Show Resume</button>
+                    </div>
             </div>
             <div class="rightSection">
-                <img src="249.png" alt="Harry's Photo">
+                <img src="249.png" alt="Anurag's Photo">
+            </div>
+        </section>
+        <section class="secondsection">
+            <hr>
+            <span class="text-grey">what I have done so far</span>
+            <h1>Work Experience</h1>
+            <div class="resume-container">
+                <!-- Embed your resume here using an iframe -->
+                <iframe src="AResume.pdf" style="width: 100%; height: 600px;" frameborder="0"></iframe>
             </div>
         </section>
     </main>
@@ -46,7 +67,12 @@
           strings: ['<i>Competitive</i> Programmer', '&amp; Web Blogger'],
           typeSpeed: 80,
         });
+
+        document.getElementById('show-resume-btn').addEventListener('click', function() {
+            var resumeContainer = document.querySelector('.resume-container');
+            resumeContainer.classList.add('show-resume'); // Add class to show the resume with transition
+            this.style.display = 'none'; // Hide the button after it's clicked
+        });
     </script>
-    <!-- Your other scripts here -->
 </body>
 </html>
